@@ -1,16 +1,6 @@
-# ![](./images/icons/icon_28.png) Custom Bang Search
+# ![](./images/icons/icon_28.png) Search Shortcuts
 
-[![Firefox Add-On version](https://img.shields.io/amo/v/custombangsearch?colorA=35383d)](https://addons.mozilla.org/en-US/firefox/addon/custombangsearch/)
-[![Firefox Add-On rating](https://img.shields.io/amo/rating/custombangsearch?colorA=35383d)](https://addons.mozilla.org/en-US/firefox/addon/custombangsearch/)
-[![Firefox Add-On user count](https://img.shields.io/amo/users/custombangsearch?colorA=35383d)](https://addons.mozilla.org/en-US/firefox/addon/custombangsearch/)
-[![Chrome extension version](https://img.shields.io/chrome-web-store/v/oobpkmpnffeacpnfbbepbdlhbfdejhpg?colorA=35383d)](https://chrome.google.com/webstore/detail/custom-bang-search/oobpkmpnffeacpnfbbepbdlhbfdejhpg?hl=en)
-[![Chrome extension rating](https://img.shields.io/chrome-web-store/rating/oobpkmpnffeacpnfbbepbdlhbfdejhpg?colorA=35383d)](https://chrome.google.com/webstore/detail/custom-bang-search/oobpkmpnffeacpnfbbepbdlhbfdejhpg?hl=en)
-[![Chrome extension user count](https://img.shields.io/chrome-web-store/users/oobpkmpnffeacpnfbbepbdlhbfdejhpg?colorA=35383d)](https://chrome.google.com/webstore/detail/custom-bang-search/oobpkmpnffeacpnfbbepbdlhbfdejhpg?hl=en)
-
-[![Firefox Add-On link](./images/firefox.png)](https://addons.mozilla.org/en-US/firefox/addon/custombangsearch/)
-[![Chrome Web Store link](./images/chrome.png)](https://chrome.google.com/webstore/detail/custom-bang-search/oobpkmpnffeacpnfbbepbdlhbfdejhpg?hl=en)
-
-A browser extension to use custom DuckDuckGo-like bangs directly from the address bar.
+A browser extension to use custom DuckDuckGo-like bangs directly from the search bar.
 
 ## Example Searches
 
@@ -25,15 +15,7 @@ A browser extension to use custom DuckDuckGo-like bangs directly from the addres
 
 [![Demo video](https://img.youtube.com/vi/IXP7RVFMJk4/0.jpg)](https://www.youtube.com/watch?v=IXP7RVFMJk4)
 
-## Search Engines
-
-[These search engines are tested and officially supported](./docs/supported-engines.md).
-
-If you set one of these as your browsers search engine, you can use the bangs directly in the search bar.
-
-Bangs will also work by just using the search engines normally.
-
-## Options Page
+## Settings Page
 
 The bang editing menu and general options are accessed using the extensions options page:
 
@@ -61,7 +43,7 @@ You can also import and export your list of bangs to/from a valid JSON file.
 
 If the save button is highlighted green, this means you have unsaved changes and they will not take effect until you press the save button.
 
-### Options
+### Settings
 
 An options *tab* exists within the options *page*, which allows you to change the behaviour of the extension.
 
@@ -81,20 +63,12 @@ CBS uses the `webRequest.onBeforeRequest` event listener to listen for requests 
 git clone https://github.com/psidex/CustomBangSearch.git
 cd CustomBangSearch
 npm install
-npm run build-firefox OR build-firefox-release OR build-chrome OR build-chrome-release
+npm run build-firefox # OR build-firefox-release OR build-chrome OR build-chrome-release
 ```
 
 This produces a `build` directory containing the compiled JavaScript, and if building the release version, 2 zip files in the root of the project that can be uploaded to the browser web extension stores.
 
 Non "release" builds (i.e. dev builds) are not minified, can contain debugging calls such as `console.log`, and also contain some development tools loaded into the popup &| options windows.
-
-### Details
-
-A custom script, `bob.mjs`, is used to build and package the extension. This was created just to speed up the build process and make testing much easier.
-
-esbuild is used to compile the TypeScript to JavaScript, the tsc compiler is listed as a dependency but this is just used for type checking / linting.
-
-The manifest files link to the compiled build made by esbuild, not the TS files, so make sure they are built before you build the extension package.
 
 ## Credits
 
