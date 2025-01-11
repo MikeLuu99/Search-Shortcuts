@@ -43,6 +43,12 @@
       ]
     },
     {
+      "bang": "gi",
+      "urls": [
+        "https://google.com/search?tbm=isch&q=%s&tbs=imgo:1"
+      ]  
+    },
+    {
       "bang": "m",
       "urls": [
         "https://www.google.com/maps/search/%s"
@@ -85,7 +91,7 @@
       ]
     },
     {
-      "bang": "ptlx",
+      "bang": "p",
       "urls": [
         "https://www.perplexity.ai/search?s=o&q=%s"
       ]
